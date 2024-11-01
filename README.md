@@ -1,1 +1,1 @@
-# GitHub-Actions-Migration
+# GitHub Actions Migration
