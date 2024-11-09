@@ -1,16 +1,19 @@
 name: CI workflow
 
-on:
+on: 
   push:
     branches:
       - main
-
+      - preprod
+      - develop
+env:
+  buildConfiguration: Release
 jobs:
-  build:
+  Build:
+    name: 'Build job'
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
-      - name: Run a Simple Script
-        run: echo "Hello, GitHub Actions!"
+    - uses: actions/checkout@v4
+    - name: dotnet build webapp
+      run: dotnet build WebApplication1/WebApplication1.Service/WebApplication1.Service.csproj --configuration ${{ env.buildConfiguration }}";
+      
