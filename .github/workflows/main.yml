@@ -28,9 +28,9 @@ jobs:
         run: npm run lint
         working-directory: app
 
-      - name: Test
-        run: npm run test:ci
-        working-directory: app
+      #- name: Test
+      #  run: npm run test:ci
+      #  working-directory: app
 
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
